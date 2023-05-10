@@ -8,7 +8,7 @@
 
 * docker-compose up --build 
 
-# git
+# git (CI/CD)
 
 # AWS 
 
