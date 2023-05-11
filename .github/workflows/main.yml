@@ -52,9 +52,9 @@ jobs:
           # Required mail subject:
           subject: "Notification de déploiement"
           # Required recipients' addresses:
-          to: "marwen.aou@gmail.com"
+          to: ${{ secrets.RECI_ADDRESS}}
           # Required sender full name (address can be skipped):
-          from: "marwen.aouini@dunasys.com"
+          from: ${{ secrets.SEND_ADDRESS}}
           # Optional plain body:
           body: "Le déploiement de l'API xxx Prediction a été effectué avec succès."
           # Optional priority: 'high', 'normal' (default) or 'low'
