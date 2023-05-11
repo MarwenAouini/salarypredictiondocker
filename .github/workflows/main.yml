@@ -32,30 +32,21 @@ jobs:
             cd salarypredictiondocker
             sudo docker-compose build
             sudo docker-compose up -d
-# Job de notification par e-mail
+  # Job de notification par e-mail
   notify:
     name: Notify
-    #needs: [jobs]
+    needs: [build]
     runs-on: ubuntu-latest
     if: always()
     steps:
       - name: Notify by Email
-        uses: danthe1st/email-filechange-notif-action@v1
+        uses: dawidd6/action-send-mail@v3
         with:
-          # The E-Mail address used to send the E-Mails
-          senderEmail: "marwen.aou@gmail.com"
-          # A file in the repository or HTTP address that contains file patterns with E-Mail addresses that should be notified on file changes
-          mailingList: "marwen_aouini@hotmail.fr"
-          # The subject of the E-Mails to send
-          subjectLine: "Notification de déploiement"
-          #body: "Le déploiement de l'API Salary Prediction a été effectué avec succès."
-          # The SMTP server used to send E-Mails
-          smtpServer: smtp.gmail.com
-          # The SMTP port used to send E-Mails
-          smtpPort: 587 # optional, default is 587
-          # The SMTP user name used to send E-Mails
-          smtpUsername: ${{ secrets.GMAIL_USERNAME }}
-          # The SMTP password used to send E-Mails
-          smtpPassword: ${{ secrets.GMAIL_PASSWORD }}
-          #Token used for cloning the repository
-          #githubToken: # optional, default is ${{ github.token }}
+          server_address: smtp.gmail.com
+          server_port: 465 #465 587
+          username: ${{ secrets.GMAIL_USERNAME }}
+          password: ${{ secrets.GMAIL_PASSWORD }}
+          subject: "Notification de déploiement"
+          body: "Le déploiement de l'API Salary Prediction a été effectué avec succès."
+          from: "your-email@gmail.com"
+          to: "your-email@hotmail.fr"
