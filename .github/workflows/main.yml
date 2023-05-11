@@ -42,9 +42,9 @@ jobs:
       - name: Notify by Email
         uses: dawidd6/action-send-mail@v3
         with:
-          server_address: smtp.gmail.com
+          server_address: smtp.dunasys.com #smtp.gmail.com
           # Server port, default 25: 
-          server_port: 465 
+          server_port: 587 
           # Optional whether this connection use TLS (default is true if server_port is 465)
           secure: true
           # Optional (recommended) mail server username:
@@ -56,7 +56,7 @@ jobs:
           # Required recipients' addresses:
           to: "marwen_aouini@hotmail.fr"
           # Required sender full name (address can be skipped):
-          from: "marwen.aou@gmail.com"
+          from: "marwen.aouini@dunasys.com"
           # Optional plain body:
           body: "Le déploiement de l'API xxx Prediction a été effectué avec succès."
           # Optional priority: 'high', 'normal' (default) or 'low'
