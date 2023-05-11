@@ -52,7 +52,7 @@ jobs:
           # Required mail subject:
           subject: "Notification de déploiement"
           # Required recipients' addresses:
-          to: "marwen_aouini@hotmail.fr"
+          to: "marwen.aou@gmail.com"
           # Required sender full name (address can be skipped):
           from: "marwen.aouini@dunasys.com"
           # Optional plain body:
