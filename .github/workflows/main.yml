@@ -47,6 +47,6 @@ jobs:
           username: ${{ secrets.GMAIL_USERNAME }}
           password: ${{ secrets.GMAIL_PASSWORD }}
           subject: "Notification de déploiement"
-          body: "Le déploiement de l'API Salary Prediction a été effectué avec succès."
-          from: "your-email@gmail.com"
-          to: "your-email@hotmail.fr"
+          body: "Le déploiement de l'API xxx Prediction a été effectué avec succès."
+          from: "marwen.aou@gmail.com"
+          to: "marwen_aouini@hotmail.fr"
