@@ -43,10 +43,21 @@ jobs:
         uses: dawidd6/action-send-mail@v3
         with:
           server_address: smtp.gmail.com
-          server_port: 465 #465 587
-          username: ${{ secrets.GMAIL_USERNAME }}
-          password: ${{ secrets.GMAIL_PASSWORD }}
+          # Server port, default 25: 
+          server_port: 465 
+          # Optional whether this connection use TLS (default is true if server_port is 465)
+          secure: true
+          # Optional (recommended) mail server username:
+          username: ${{ secrets.MAIL_USERNAME }}
+          # Optional (recommended) mail server password:
+          password: ${{ secrets.MAIL_PASSWORD }}
+          # Required mail subject:
           subject: "Notification de déploiement"
-          body: "Le déploiement de l'API xxx Prediction a été effectué avec succès."
-          from: "marwen.aou@gmail.com"
+          # Required recipients' addresses:
           to: "marwen_aouini@hotmail.fr"
+          # Required sender full name (address can be skipped):
+          from: "marwen.aou@gmail.com"
+          # Optional plain body:
+          body: "Le déploiement de l'API xxx Prediction a été effectué avec succès."
+          # Optional priority: 'high', 'normal' (default) or 'low'
+          priority: low
