@@ -40,13 +40,22 @@ jobs:
     if: always()
     steps:
       - name: Notify by Email
-        uses: dawidd6/action-send-mail@v3
+        uses: danthe1st/email-filechange-notif-action@v1
         with:
-          server_address: smtp.gmail.com
-          server_port: 587
-          username: ${{ secrets.GMAIL_USERNAME }}
-          password: ${{ secrets.GMAIL_PASSWORD }}
-          subject: "Notification de déploiement"
+          # The E-Mail address used to send the E-Mails
+          senderEmail: "marwen.aou@gmail.com"
+          # A file in the repository or HTTP address that contains file patterns with E-Mail addresses that should be notified on file changes
+          mailingList: "marwen_aouini@hotmail.fr"
+          # The subject of the E-Mails to send
+          subjectLine: "Notification de déploiement"
           body: "Le déploiement de l'API Salary Prediction a été effectué avec succès."
-          from: "marwen.aou@gmail.com"
-          to: "marwen_aouini@hotmail.fr"
+          # The SMTP server used to send E-Mails
+          smtpServer: smtp.gmail.com
+          # The SMTP port used to send E-Mails
+          smtpPort: 587 # optional, default is 587
+          # The SMTP user name used to send E-Mails
+          smtpUsername: ${{ secrets.GMAIL_USERNAME }}
+          # The SMTP password used to send E-Mails
+          smtpPassword: ${{ secrets.GMAIL_PASSWORD }}
+          #Token used for cloning the repository
+          #githubToken: # optional, default is ${{ github.token }}
