@@ -22,7 +22,7 @@ def predict_salary(input_data: ExperienceInput):
 
 @app.get("/")
 def hello():
-    return {"message": "Hello, Merci!"}
+    return {"message": "Hello, I am an API!"}
 
 # Exécuter l'application avec uvicorn
 if __name__ == "__main__":
