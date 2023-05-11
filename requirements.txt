@@ -4,4 +4,8 @@ scikit-learn
 fastapi 
 uvicorn 
 spacy
+<<<<<<< HEAD
 httpx
+=======
+httpx
+>>>>>>> e7474f1b7d3745ef3be04660e0e8f81c30223720
